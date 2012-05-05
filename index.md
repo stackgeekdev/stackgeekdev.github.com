@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: home
 title: StackGeek
 tagline: OpenStack Software and Consulting 
 ---
