@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Hello World!
-tagline: Supporting tagline
+title: StackGeek
+tagline: OpenStack Software and Consulting 
 ---
 {% include JB/setup %}
 
