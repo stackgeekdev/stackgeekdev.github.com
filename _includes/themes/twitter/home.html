@@ -46,8 +46,41 @@
           <h1>OpenStack Experts</h1>
           <p>We build private cloud solutions with <a href="http://openstack.org/">OpenStack</a>.  For you.</p>
           <p class="download-info">
-            <a href="" id="contact_us" class="btn btn-primary btn-large">Contact Us Today</a>
-            <a href="" id="contact_us" class="btn btn-large">Watch a Demo</a>
+	        <a class="btn btn-primary btn-large" data-toggle="modal" href="#contactmodal">Contact Us Today</a>
+		    <a class="btn btn-large" data-toggle="modal" href="#demomodal">Watch a Demo</a>
+		    <div id="contactmodal" class="modal fade">
+		      <div class="modal-header">
+		        <button class="close" data-dismiss="modal">&times;</button>
+		        <h3>Email StackGeek</h3>
+		      </div>
+		      <div class="modal-body">
+				<div id="wufoo-z7x3x5"></div>
+				<script type="text/javascript">var z7x3x5;(function(d, t) {
+				var s = d.createElement(t), options = {
+				'userName':'stackgeek', 
+				'formHash':'z7x3x5', 
+				'autoResize':true,
+				'height':'577',
+				'async':true,
+				'header':'show'};
+				s.src = ('https:' == d.location.protocol ? 'https://' : 'http://') + 'wufoo.com/scripts/embed/form.js';
+				s.onload = s.onreadystatechange = function() {
+				var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return;
+				try { z7x3x5 = new WufooForm();z7x3x5.initialize(options);z7x3x5.display(); } catch (e) {}};
+				var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
+				})(document, 'script');</script>
+              </div>
+		    </div>
+			<div id="demomodal" class="modal fade">
+		      <div class="modal-header">
+		        <button class="close" data-dismiss="modal">&times;</button>
+		        <h3>OpenStack Demo</h3>
+		      </div>
+		      <div class="modal-body">
+				<div id="wufoo-z7x3x5"></div>
+
+              </div>
+		    </div>
           </p>
         </div>
       
@@ -60,7 +93,7 @@
               <a href="https://twitter.com/stackgeek" class="twitter-follow-button" data-link-color="#0069D6" data-show-count="true">Follow @stackgeek</a>
             </li>
             <li class="tweet-btn">
-              <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://stackgeekdev.github.com//" data-count="horizontal" data-via="twbootstrap" data-related="mdo:Creator of Twitter Bootstrap">Tweet</a>
+              <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://stackgeek.com/" data-count="horizontal" data-via="stackgeek" data-related="stackgeek:StackGeek">Tweet</a>
             </li>
           </ul>
         </div>
