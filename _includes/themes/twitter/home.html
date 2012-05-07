@@ -14,7 +14,6 @@
     <!-- Le styles -->
     <link href="{{ ASSET_PATH }}/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="{{ ASSET_PATH }}/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
-    <link href="{{ ASSET_PATH }}/css/docs.css" rel="stylesheet" type="text/css" media="all">
     <link href="{{ ASSET_PATH }}/js/google-code-prettify/prettify.css" rel="stylesheet">
 
     <!-- Le fav and touch icons -->
@@ -42,13 +41,13 @@
     </div>
 
     <div class="container">
-
       <header class="jumbotron masthead">
         <div class="inner">
           <h1>OpenStack Experts</h1>
           <p>We build private cloud solutions with <a href="http://openstack.org/">OpenStack</a>.  For you.</p>
           <p class="download-info">
-            <a href="" id="contact_us" class="btn btn-primary btn-large">Want to Know More?</a>
+            <a href="" id="contact_us" class="btn btn-primary btn-large">Contact Us Today</a>
+            <a href="" id="contact_us" class="btn btn-large">Watch a Demo</a>
           </p>
         </div>
       
@@ -67,18 +66,79 @@
         </div>
       </header>
 
-      <div class="content">
-        {{ content }}
+	<hr class="soften">
+
+	<div class="marketing">
+	  <h1>Save thousands a month on infrastructure.</h1>
+	  <p class="marketing-byline">StackGeek can help you.  Here's how.</p>
+	  <div class="row">
+	    <div class="span4">
+	      <img class="bs-icon" src="assets/themes/twitter/img/glyphicons_087_log_book.png">
+	      <h2>Setup Guides</h2>
+	      <p>Setup and test your first OpenStack deployment using our scripts, setup guides and videos.  We here to assist in evaluating OpenStack's technology for use in your organization.</p>
+	    </div>
+	    <div class="span4">
+	      <img class="bs-icon" src="assets/themes/twitter/img/glyphicons_367_amazon.png">
+	      <h2>AWS Support</h2>
+	      <p>You don't have to spend hours rewriting your deployment code to use OpenStack. 95% of Amazon's EC2/S3 calls are supported out of the box.  We'll help with the other 5%.</p>
+	    </div>
+	    <div class="span4">
+	      <img class="bs-icon" src="assets/themes/twitter/img/glyphicons_054_clock.png">
+	      <h2>Save Time and Money</h2>
+	      <p>Cut your evaluation and deployment costs by leveraging our infrastructure knowledge.  We help you build scalable solutions for your current software architecture.</p>
+	    </div>
+	  </div><!--/row-->
+	  <div class="row">
+	    <div class="span4">
+	      <img class="bs-icon" src="assets/themes/twitter/img/glyphicons_155_show_thumbnails.png">
+	      <h2>Infinite Scaling</h2>
+	      <p>OpenStack deployments can manage thousands of compute and storage nodes.  Provision server flavors and host targets for the hungriest compute based applications.</p>
+	    </div>
+	    <div class="span4">
+	      <img class="bs-icon" src="assets/themes/twitter/img/glyphicons_239_riflescope.png">
+	      <h2>Targeted Deployments</h2>
+	      <p>Deploy on-demand instances for development, staging, QA and production environments.  Effortlessly use lower cost hardware for development and beefier hardware for production.</p>
+	    </div>
+	    <div class="span4">
+	      <img class="bs-icon" src="assets/themes/twitter/img/glyphicons_037_credit.png">
+	      <h2>Big Time Storage</h2>
+	      <p>OpenStack integrates with Rackspace's Swift storage project.  Swift provides a redundant, S3 compatible storage layer to your cloud using your existing resources.</p>
+	    </div>
+	  </div><!--/row-->
+	  <div class="row">
+	    <div class="span4">
+	      <img class="bs-icon" src="assets/themes/twitter/img/glyphicons_083_random.png">
+	      <h2>Complex Networking</h2>
+	      <p>OpenStack provides a powerful layer 4 routing network layer with private and public addressing.  StackGeek provides solutions for more complex configurations for global load balancing and layer 7 routing.</p>
+	    </div>
+	    <div class="span4">
+	      <img class="bs-icon" src="assets/themes/twitter/img/glyphicons_023_cogwheels.png">
+	      <h2>Custom Images</h2>
+	      <p>Build and launch RHEL, CentOS and Fedora server configurations in minutes using StackGeek's Boxgrinder based appliance.  Store the configurations revisions in Github and share them with others. <span class="label label-important">Coming Soon!</span></p>
+	    </div>
+	    <div class="span4">
+	      <img class="bs-icon" src="assets/themes/twitter/img/glyphicons_024_parents.png">
+	      <h2>Join the Community</h2>
+	      <p>Discuss, investigate and ask questions from our growing community of OpenStack users.  Write your own guides and share them with others.  Share deployment configurations, scripts, and more.</p>
+	    </div>
+	  </div><!--/row-->
+
+	  <hr class="soften">
+
+
+      <div class="content-home">
+	      <div class="section twitter">
+			<p><code id="tweet_date">Posted a few minutes past a while ago.</code>
+	        <code>via <a href="http://twitter.com/stackgeek">@stackgeek</a></code></p>
+	        <p><code id="tweet_tweet"></code></p>
+	      </div>
       </div>
 
-      <footer>
-        <p>&copy; {{ site.author.name }} 2012 
-          with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
-          and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
+      <footer
+        <p>&copy; {{ site.author.name }} 2012.  Build with <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a> and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
         </p>
       </footer>
 
-    </div> <!-- /container -->
 
     {% include JB/analytics %}
     <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
@@ -97,5 +157,51 @@
     <script src="{{ ASSET_PATH }}/js/bootstrap-carousel.js"></script>
     <script src="{{ ASSET_PATH }}/js/bootstrap-typeahead.js"></script>
 
+    </div> <!-- /container -->
+
+    <script type="text/javascript">
+    $(document).ready(function() {
+		// Define: Linkify plugin
+		(function($){
+		  var url1 = /(^|&lt;|\s)(www\..+?\..+?)(\s|&gt;|$)/g,url2 = /(^|&lt;|\s)(((https?|ftp):\/\/|mailto:).+?)(\s|&gt;|$)/g,
+
+		      linkifyThis = function () {
+		        var childNodes = this.childNodes,
+		            i = childNodes.length;
+		        while(i--)
+		        {
+		          var n = childNodes[i];
+		          if (n.nodeType == 3) {
+		            var html = $.trim(n.nodeValue);
+		            if (html)
+		            {
+		              html = html.replace(/&/g, '&amp;')
+		                         .replace(/</g, '&lt;')
+		                         .replace(/>/g, '&gt;')
+		                         .replace(url1, '$1<a href="http://$2">$2</a>$3')
+		                         .replace(url2, '$1<a href="$2">$2</a>$5');
+		              $(n).after(html).remove();
+		            }
+		          }
+		          else if (n.nodeType == 1  &&  !/^(a|button|textarea)$/i.test(n.tagName)) {
+		            linkifyThis.call(n);
+		          }
+		        }
+		      };
+		  $.fn.linkify = function () {return this.each(linkifyThis);};
+
+		})(jQuery);;
+      // twitter
+      $.getJSON('https://api.twitter.com/statuses/user_timeline/stackgeek.json?count=1&callback=?', function(tweetBlob) {
+          if(tweetBlob[0].text) {
+              $('#tweet_tweet').html(tweetBlob[0].text);
+              $('#tweet_tweet').linkify();
+              $("#tweet_date").html(tweetBlob[0].created_at);
+          } else {
+              $('#tweet_tweet').html('There was an error loading StackGeeks\'s Twitter feed.');
+          }
+      });
+    });  // closes document ready function
+    </script>
   </body>
 </html>
