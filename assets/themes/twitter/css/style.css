@@ -16,6 +16,8 @@ html, body {
   text-align: center; /* center align it with the container */
 }
 
+div#demomodal { height: 560px; max-height: 560px; width: 720px; left: 45%;}
+
 /* Tweak navbar brand link to be super sleek
 -------------------------------------------------- */
 .navbar-fixed-top .brand {
@@ -32,6 +34,69 @@ html, body {
 }
 .navbar-fixed-top .brand:hover {
   text-decoration: none;
+}
+
+/* twitter crap */
+footer a, footer h3 a {
+  color:#4A3022;
+}
+
+footer h3 {
+  margin:0;
+}
+
+footer div.twitter {
+  position:relative;
+  top:-33px;
+  width:270px;
+  left:25%;
+  margin-left:100px;
+}
+
+footer div.twitter h3 {
+  margin:0 0 1px 3px;
+}
+
+footer p.tweet {
+  font-size:12px;
+  text-align: left;
+  background:#FFFFFF;
+  padding:8px 10px;
+  -webkit-border-radius:5px;
+  -moz-border-radius:5px;
+  border-radius:5px;
+  margin:0;
+}
+
+footer p.tweet a {
+  color:#296F9B;
+}
+
+footer p.meta {
+  position:relative;
+  margin:0 0 0 12px;
+  padding:0 0 0 32px;
+  font-size:12px;
+  line-height:24px;
+}
+
+footer p.meta:before {
+  content:'';
+  position:absolute;
+  height:0;
+  display:block;
+  left:0;
+  top:0;
+  width:0;
+  border-top:12px solid #FFFFFF;
+  border-right:12px solid #FFFFFF;
+  border-bottom:12px solid transparent;
+  border-left:12px solid transparent;
+}
+
+footer p.copyright {
+  position: inline;
+  bottom:0;
 }
 
 /* Space out sub-sections more

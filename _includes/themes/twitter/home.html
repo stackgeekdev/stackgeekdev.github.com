@@ -118,31 +118,27 @@
 	    <div class="span4">
 	      <img class="bs-icon" src="assets/themes/twitter/img/glyphicons_024_parents.png">
 	      <h2>Join the Community</h2>
-	      <p>Discuss, investigate and ask questions from our growing community of OpenStack users.  Write your own guides and share them with others.  Share deployment configurations, scripts, and more.</p>
+	      <p>Discuss, investigate and ask questions from our growing community of OpenStack users.  Write your own guides and share them with others.  Share deployment configurations, scripts, and more. <span class="label label-important">Coming Soon!</span></p>
 	    </div>
 	  </div><!--/row-->
 
 	  <hr class="soften">
+	</div>
 
-
-      <div class="content-home">
-	      <div class="section twitter">
-			<p><code id="tweet_date">Posted a few minutes past a while ago.</code>
-	        <code>via <a href="http://twitter.com/stackgeek">@stackgeek</a></code></p>
-	        <p><code id="tweet_tweet"></code></p>
-	      </div>
-      </div>
 
     {% include JB/analytics %}
     {% include themes/twitter/jsincludes.html %}
     {% include themes/twitter/twitter.html %}
-    </div> <!-- /container -->
  
     <footer>
-      <p>&copy; {{ site.author.name }} 2012.  Build with <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a> and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
-      </p>
+      <div class="section twitter">
+        <h3>Just in from <a href="http://twitter.com/stackgeek" target="_blank">@stackgeek</a></h3>
+        <p class="tweet" id="tweet_tweet"></p>
+        <p class="meta"></p>
+      </div>
+      <p class="copyright">© 2012 StackGeek, Inc., All Rights Reserved</p>
     </footer>
-
+    </div> <!-- /container -->
 
   </body>
 </html>
