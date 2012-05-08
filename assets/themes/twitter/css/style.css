@@ -40,6 +40,8 @@ section {
   padding-top: 60px;
 }
 
+article h2{ padding-top: 10px;}
+
 /* Faded out hr */
 hr.soften {
   height: 1px;
