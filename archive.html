@@ -1,0 +1,28 @@
+---
+layout: default
+title: Archives
+group: navigation
+---
+
+<div id="archive">
+	<article>
+    {% for post in site.posts %}
+        {% capture tmp_year %}{{ post.date|date:'%Y' }}{% endcapture %}
+        {% if year != tmp_year %}
+            {% assign year = tmp_year %}
+            <h2 class="year">{{ year }}</h2>
+        {% endif %}
+
+        {% capture tmp_month %}{{ post.date|date:'%B' }}{% endcapture %}
+        {% if month != tmp_month %}
+            {% assign month = tmp_month %}
+            <h3 class="month">{{ month }}</h3>
+        {% endif %}
+
+        <div>
+            <h4><a href="{{ post.url }}">{{ post.title }}</a></h4>
+            <p>{{ post.content | strip_html | truncatewords:"30" }} <a href="{{ post.url }}">Read more &raquo;</a></p>
+        </div>
+    {% endfor %}
+    </article>
+</div>

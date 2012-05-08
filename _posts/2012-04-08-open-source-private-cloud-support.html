@@ -1,0 +1,141 @@
+---
+layout: post
+title: "Comparison of Open Source Cloud Support for EC2"
+description: ""
+category: 
+tags: []
+by: Kord Campbell
+---
+{% include JB/setup %}
+
+<p>The Open Source private cloud social scene has been in a real brouhaha over the last few weeks. Media attention has focused on <a href='http://www.readwriteweb.com/cloud/2012/03/amazon-taps-eucalyptus-as-private-cloud-partner.php'>partnerships</a> and <a href='http://www.readwriteweb.com/cloud/2012/04/can-copyleft-clouds-find-contr.php'>software re-licensing</a>. There's also been talk of <a href='http://www.readwriteweb.com/cloud/2012/01/microsofts-hyper-v-support-bro.php'>mis-aligned hypervisor support</a> and a <a href='http://gigaom.com/2012/04/07/true-or-false-citrix-is-more-compatible-with-aws'>couple</a> of EC2 API <a href='http://gigaom.com/cloud/5-takeaways-from-the-cloudstack-openstack-dustup'>compatibility</a> <a href='http://cloudpundit.com/2012/04/07/do-amazons-apis-matter/'>debates</a>.</p>
+
+<p>It's time to take a look at exactly what matters when it comes to getting serious platform adoption - making small development team's lives easier.</p>
+
+<p><img src='/assets/images/fatandhappy.png' alt='' /></p>
+
+<h2 id='why_does_ec2_api_support_matter'>Why does EC2 API Support Matter?</h2>
+
+<p>The primary reason EC2/S3 API compatibility matters is the sheer amount of code which has been <a href='http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/using-libraries.html'>written against Amazon's APIs</a>. If a developer has written a ton of code to talk to AWS, it's unlikely they would want to spend the time or effort porting all their calls to support a separate API. This is probably one reason <a href='http://www.networkcomputing.com/cloud-computing/232800457'>there is such a clamor on the Internets</a> for standardizing cloud APIs.</p>
+
+<p>This is also evidenced in the fairly uniformed EC2/S3 support provided by <a href='http://openstack.org'>OpenStack</a>, <a href='http://eucalyptus.com'>Eucalyptus</a> and <a href='http://cloudstack.org'>Cloudstack</a>. Providing support for EC2 calls makes it easier to extend infrastructure building calls into a private cloud offering.</p>
+
+<h2 id='high_level_comparison_for_ec2_api_support'>High Level Comparison for EC2 API Support</h2>
+
+<p>The OpenStack wiki has a <a href='http://wiki.openstack.org/Nova/APIFeatureComparison'>fairly detailed API compatibility matrix</a> showing support for the main calls to the EC2 APIs. With the exception of Eucalyptus' lack of documentation, both <a href='http://nova.openstack.org/devref/api.html#ec2-api'>OpenStack's EC2 support</a> and <a href='http://download.cloud.com/cloudbridge/CloudBridge1.0InstallGuide.pdf'>CloudWatch's CloudBridge EC2 support</a> provide all the basic features for launching servers:</p>
+
+<table class="table table-condensed">
+<tr>
+<thead>
+<tr><th>Feature</th><th>OpenStack</th><th>Eucalyptus</th><th>CloudStack</th></tr>
+</thead>
+<tbody>
+<tr>
+<td>Register/Deregister Images</td><td><i class="icon-ok"></i></td><td><i class="icon-ok"></i></td><td><i class="icon-ok"></i></td>
+</tr>
+<tr>
+<td>Launch/Terminate/Reboot Instances</td><td><i class="icon-ok"></i></td><td><i class="icon-ok"></i></td><td><i class="icon-ok"></i></td>
+</tr>
+<tr>
+<td>Create/Delete/Describe Keypairs</td><td><i class="icon-ok"></i></td><td><i class="icon-ok"></i></td><td><i class="icon-ok"></i></td>
+</tr>
+<tr>
+<td>Allocate/Associate/Release IP Address</td><td><i class="icon-ok"></i></td><td><i class="icon-ok"></i></td><td><i class="icon-ok"></i></td>
+</tr>
+<tr>
+<td>Create/Delete/Describe Snapshot</td><td><i class="icon-ok"></i></td><td><i class="icon-ok"></i></td><td><i class="icon-ok"></i></td>
+</tr>
+<tr>
+<td>Create/Delete/Attach Volume</td><td><i class="icon-ok"></i></td><td><i class="icon-ok"></i></td><td><i class="icon-ok"></i></td>
+</tr>
+<tr>
+<td>Create/Delete/Desc/Auth/Revoke Security Group</td><td><i class="icon-ok"></i></td><td><i class="icon-ok"></i></td><td><i class="icon-ok"></i></td>
+</tr>
+</tbody>
+</table>
+
+
+Each project allows you to create OS images, spin up instances, give them keypairs, assign them floating IPs, control their firewall rules, attach volumes, make snapshots, and shut the whole thing down when you are done.
+
+<code>tl;dr;</code> Servers at a click!
+
+
+## So Then, What's Not Supported?
+
+<h2 id='so_then_whats_not_supported'>So Then, What's Not Supported?</h2>
+
+<p>Not all EC2 API features are supported by the separate projects, and some are not supported at all. In general, there are some small subtle difference between the support of the EC2 APIs. Let's take a look at who supports what, if at all:</p>
+
+<table class="table table-condensed">
+<tr>
+  <thead>
+    <tr><th>Feature</th><th>OpenStack</th><th>Eucalyptus</th><th>CloudStack</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+     <td>Paid AMIs</td><td><i class="icon-ban-circle"></td><td><i class="icon-ban-circle"></i></td><td><i class="icon-ban-circle"></i></td>
+   </tr>
+    <tr>
+     <td>Spot Instances</td><td><i class="icon-ban-circle"></i></td><td><i class="icon-ban-circle"></i></td><td><i class="icon-ban-circle"></i></td>
+   </tr>
+    <tr>
+     <td>Reserved Instances</td><td><i class="icon-ban-circle"></i></td><td><i class="icon-ban-circle"></i></td><td><i class="icon-ban-circle"></i></td>
+   </tr>
+   <tr>
+     <td>Instance Bundling</td><td><i class="icon-ban-circle"></i></td><td><i class="icon-ban-circle"></i></td><td><i class="icon-ban-circle"></i></td>
+   </tr>
+    <tr>
+     <td>Tagging/Filters</td><td><i class="icon-ban-circle"></i></td><td><i class="icon-ban-circle"></i></td><td><i class="icon-ban-circle"></i></td>
+   </tr>
+    <tr>
+     <td>CloudWatch (monitoring)</td><td><i class="icon-ban-circle"></i></td><td><i class="icon-ban-circle"></i></td><td><i class="icon-ban-circle"></i></td>
+   </tr>
+    <tr>
+     <td>Elastic Load Balancing</td><td><i class="icon-ban-circle"></i></td><td><i class="icon-ban-circle"></i></td><td><i class="icon-ok"></i></td>
+   </tr>
+   <tr>
+     <td>VPC IPSec</td><td><i class="icon-ban-circle"></i></td><td><i class="icon-ban-circle"></i></td><td><i class="icon-ok"></i></td>
+   </tr>
+    <tr>
+     <td>Create Image</td><td><i class="icon-ban-circle"></i></td><td><i class="icon-ban-circle"></i></td><td><i class="icon-ok"></i></td>
+   </tr>
+    <tr>
+     <td>EBS Backed Instances</td><td><i class="icon-ok"></i></td><td><i class="icon-ban-circle"></i></td><td><i class="icon-ok"></i></td>
+   </tr>
+    <tr>
+     <td>Import Keypairs</td><td><i class="icon-ok"></i></td><td><i class="icon-ban-circle"></i></td><td><i class="icon-ok"></i></td>
+   </tr>
+    <tr>
+    <tr>
+     <td>Describe Region</td><td><i class="icon-ok"></i></td><td><i class="icon-ok"></i></td><td><i class="icon-ban-circle"></i></td>
+   </tr>
+    <tr>
+     <td>Console Output</td><td><i class="icon-ok"></i></td><td><i class="icon-ok"></i></td><td><i class="icon-ban-circle"></i></td>
+   </tr>
+  </tbody>
+</table>
+
+<p>Here's what isn't supported: Paid AMIs (a tasty thought for revenue), spot instances, reserved instances, instance bundling (to AMI), monitoring, and tagging/filter support is, by and large, not supported by anyone. CloudStack has a few filter calls, but they are minimally supported. Someone should really add tagging support.</p>
+
+<p>CloudStack has the upper hand on the load balancing calls. It should be trivial to add load balancing calls to the other projects to support devices like a <a href='http://f5.com'>F5</a> or <a href='http://www.citrix.com/English/ps2/products/product.asp?contentID=21679'>Netscaler</a> box though. <a href='http://citrix.com'>Citrix</a>, the authors of CloudStack/cloud.com, also owns Netscaler. They do happen to have an image you can launch which contains a load balancer based on HAProxy. I'm not sure if the code for that is publicly available or not. Comments?</p>
+
+<p>CloudStack also support EC2 API equivalent calls for creating IPSec on VPCs. I've never done it, but I hear it's nice. Support for creating images is also provided.</p>
+
+<p>Eucalyptus, for all the press they got with their <a href='http://www.wired.com/cloudline/2012/03/amazon-eucalyptus/'>Amazon press release</a>, actually appears to support the least of all the under-supported EC2 features. The only thing they've got going for them here is the describe-region call that CloudStack doesn't appear to support at all (according to their docs), and the console-output call. Region support in OpenStack is essentially the &#8216;project' feature they provide. <code>Nice.</code></p>
+
+<p>CloudStack argues they support the console output call via the GUI, but according to their docs they don't support the EC2 API equivalent calls. I'm pretty sure those are used by <a href='http://rightscale.com'>RightScale</a>.</p>
+
+<p>OpenStack and CloudStack support starting and stopping EBS backed instances with the EC2 calls, although they aren't really stored on an Elastic Block Storage device. Still, it's cool to be able to pause an instance and then start it back up later. Eucalyptus should support this.</p>
+
+<h2 id='a_few_other_thoughts'>A Few Other Thoughts</h2>
+
+<p>In general, I think most of the calls developers would be using are covered by each of the three projects. The difference in method support seem minor in many ways, and anyone trying to make a big deal of it is probably just splitting hairs at this point. Stop being a tool.</p>
+
+<p>I really like the idea of CloudStack's support for load balancing. I think it's often times overlooked, and difficult to configure correctly. Not having used CloudStack's solution, I can't can for certain if it works well or is easy to set up, but it sounds great! :)</p>
+
+<p>Monitoring is an absolute must have here. CloudWatch provides some simple monitoring (haven't managed to get it running yet, so will report back), but none of the projects do a very good job of it, nor support the EC2 APIs for it. I would imagine this would be a feature most users would want. I wonder how many people actually use the calls for CloudWatch. I <a href='http://loggly.com/blog/2011/05/send-custom-metrics-to-cloudwatchs-api/'>hooked it up myself</a> to do simple monitoring a while back, but never ended up using it seriously.</p>
+
+<p>If you have any factual corrections for my post, please feel free to comment below. Be sure to contribute to the OpenStack wiki if you see errors there as well!</p>
+
+<p>In my next post I'll be covering the support for the S3 APIs by each project. All three appear to have support for it, but it's poorly documented on all fronts.</p>
+</article>

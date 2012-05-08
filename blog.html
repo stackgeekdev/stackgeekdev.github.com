@@ -7,4 +7,16 @@ group: navigation
 {% include JB/setup %}
 
 {% assign posts_collate = site.posts %}
-{% include JB/posts_collate %}
+
+{% for post in site.posts limit:2 offset:0 %}
+    <article>
+        <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+        <p><small>posted on {{ post.date | date_to_long_string }}</small></p>
+        <p>{{ post.content }} <a href="{{ post.url }}#comments">Comment&raquo;</a></p>
+    </article>
+	<hr class="soften-small/">
+{% endfor %}
+
+<p class="older_posts">
+    <a class="btn large" href="/archive.html">Older posts &raquo;</a>
+</p>

@@ -16,13 +16,10 @@
     <link href="{{ ASSET_PATH }}/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
     <link href="{{ ASSET_PATH }}/js/google-code-prettify/prettify.css" rel="stylesheet">
 
-    <!-- Le fav and touch icons -->
-  <!-- Update these with your own images
-    <link rel="shortcut icon" href="images/favicon.ico">
-    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
-  -->
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="assets/themes/twitter/img/glyphicons_324_tie.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/themes/twitter/img/glyphicons_324_tie.png">
+
   </head>
 
   <body>
@@ -48,46 +45,15 @@
           <p class="download-info">
 	        <a class="btn btn-primary btn-large" data-toggle="modal" href="#contactmodal">Contact Us Today</a>
 		    <a class="btn btn-large" data-toggle="modal" href="#demomodal">Watch a Demo</a>
-		    <div id="contactmodal" class="modal fade">
-		      <div class="modal-header">
-		        <button class="close" data-dismiss="modal">&times;</button>
-		        <h3>Email StackGeek</h3>
-		      </div>
-		      <div class="modal-body">
-				<div id="wufoo-z7x3x5"></div>
-				<script type="text/javascript">var z7x3x5;(function(d, t) {
-				var s = d.createElement(t), options = {
-				'userName':'stackgeek', 
-				'formHash':'z7x3x5', 
-				'autoResize':true,
-				'height':'577',
-				'async':true,
-				'header':'show'};
-				s.src = ('https:' == d.location.protocol ? 'https://' : 'http://') + 'wufoo.com/scripts/embed/form.js';
-				s.onload = s.onreadystatechange = function() {
-				var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return;
-				try { z7x3x5 = new WufooForm();z7x3x5.initialize(options);z7x3x5.display(); } catch (e) {}};
-				var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
-				})(document, 'script');</script>
-              </div>
-		    </div>
-			<div id="demomodal" class="modal fade">
-		      <div class="modal-header">
-		        <button class="close" data-dismiss="modal">&times;</button>
-		        <h3>OpenStack Demo</h3>
-		      </div>
-		      <div class="modal-body">
-				<div id="wufoo-z7x3x5"></div>
-
-              </div>
-		    </div>
+            {% include themes/twitter/emailmodal.html %}
+            {% include themes/twitter/demomodal.html %}
           </p>
         </div>
       
         <div class="bs-links">
           <ul class="quick-links">
             <li class="github-btn">
-              <iframe src="http://markdotto.github.com/github-buttons/github-btn.html?user=stackgeekdev&type=follow&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="165px" height="20px"></iframe>
+              <iframe src="http://markdotto.github.com/github-buttons/github-btn.html?user=stackgeekdev&type=follow&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="180px" height="20px"></iframe>
             </li>
             <li class="follow-btn">
               <a href="https://twitter.com/stackgeek" class="twitter-follow-button" data-link-color="#0069D6" data-show-count="true">Follow @stackgeek</a>
@@ -142,7 +108,7 @@
 	    <div class="span4">
 	      <img class="bs-icon" src="assets/themes/twitter/img/glyphicons_083_random.png">
 	      <h2>Complex Networking</h2>
-	      <p>OpenStack provides a powerful layer 4 routing network layer with private and public addressing.  StackGeek provides solutions for more complex configurations for global load balancing and layer 7 routing.</p>
+	      <p>OpenStack provides a powerful layer 4 routing network layer with private and public addressing.  StackGeek provides solutions for more complex configurations for failover, global load balancing and layer 7 routing.</p>
 	    </div>
 	    <div class="span4">
 	      <img class="bs-icon" src="assets/themes/twitter/img/glyphicons_023_cogwheels.png">
@@ -167,74 +133,16 @@
 	      </div>
       </div>
 
-      <footer
-        <p>&copy; {{ site.author.name }} 2012.  Build with <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a> and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
-        </p>
-      </footer>
-
-
     {% include JB/analytics %}
-    <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
-    <script src="{{ ASSET_PATH }}/js/jquery.js"></script>
-    <script src="{{ ASSET_PATH }}/js/google-code-prettify/prettify.js"></script>
-    <script src="{{ ASSET_PATH }}/js/bootstrap-transition.js"></script>
-    <script src="{{ ASSET_PATH }}/js/bootstrap-alert.js"></script>
-    <script src="{{ ASSET_PATH }}/js/bootstrap-modal.js"></script>
-    <script src="{{ ASSET_PATH }}/js/bootstrap-dropdown.js"></script>
-    <script src="{{ ASSET_PATH }}/js/bootstrap-scrollspy.js"></script>
-    <script src="{{ ASSET_PATH }}/js/bootstrap-tab.js"></script>
-    <script src="{{ ASSET_PATH }}/js/bootstrap-tooltip.js"></script>
-    <script src="{{ ASSET_PATH }}/js/bootstrap-popover.js"></script>
-    <script src="{{ ASSET_PATH }}/js/bootstrap-button.js"></script>
-    <script src="{{ ASSET_PATH }}/js/bootstrap-collapse.js"></script>
-    <script src="{{ ASSET_PATH }}/js/bootstrap-carousel.js"></script>
-    <script src="{{ ASSET_PATH }}/js/bootstrap-typeahead.js"></script>
-
+    {% include themes/twitter/jsincludes.html %}
+    {% include themes/twitter/twitter.html %}
     </div> <!-- /container -->
+ 
+    <footer>
+      <p>&copy; {{ site.author.name }} 2012.  Build with <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a> and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
+      </p>
+    </footer>
 
-    <script type="text/javascript">
-    $(document).ready(function() {
-		// Define: Linkify plugin
-		(function($){
-		  var url1 = /(^|&lt;|\s)(www\..+?\..+?)(\s|&gt;|$)/g,url2 = /(^|&lt;|\s)(((https?|ftp):\/\/|mailto:).+?)(\s|&gt;|$)/g,
 
-		      linkifyThis = function () {
-		        var childNodes = this.childNodes,
-		            i = childNodes.length;
-		        while(i--)
-		        {
-		          var n = childNodes[i];
-		          if (n.nodeType == 3) {
-		            var html = $.trim(n.nodeValue);
-		            if (html)
-		            {
-		              html = html.replace(/&/g, '&amp;')
-		                         .replace(/</g, '&lt;')
-		                         .replace(/>/g, '&gt;')
-		                         .replace(url1, '$1<a href="http://$2">$2</a>$3')
-		                         .replace(url2, '$1<a href="$2">$2</a>$5');
-		              $(n).after(html).remove();
-		            }
-		          }
-		          else if (n.nodeType == 1  &&  !/^(a|button|textarea)$/i.test(n.tagName)) {
-		            linkifyThis.call(n);
-		          }
-		        }
-		      };
-		  $.fn.linkify = function () {return this.each(linkifyThis);};
-
-		})(jQuery);;
-      // twitter
-      $.getJSON('https://api.twitter.com/statuses/user_timeline/stackgeek.json?count=1&callback=?', function(tweetBlob) {
-          if(tweetBlob[0].text) {
-              $('#tweet_tweet').html(tweetBlob[0].text);
-              $('#tweet_tweet').linkify();
-              $("#tweet_date").html(tweetBlob[0].created_at);
-          } else {
-              $('#tweet_tweet').html('There was an error loading StackGeeks\'s Twitter feed.');
-          }
-      });
-    });  // closes document ready function
-    </script>
   </body>
 </html>

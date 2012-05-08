@@ -16,13 +16,10 @@
     <link href="{{ ASSET_PATH }}/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
     <link href="{{ ASSET_PATH }}/js/google-code-prettify/prettify.css" rel="stylesheet">
 
-    <!-- Le fav and touch icons -->
-  <!-- Update these with your own images
-    <link rel="shortcut icon" href="images/favicon.ico">
-    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
-  -->
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="assets/themes/twitter/img/glyphicons_324_tie.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/themes/twitter/img/glyphicons_324_tie.png">
+
   </head>
 
   <body>
@@ -41,36 +38,15 @@
     </div>
 
     <div class="container">
-
       <div class="content">
+		 <h3><a href="/">Home</a> >> About StackGeek</h3>
+	     <article>
 		    <h2>Company</h2>
 		    <p>StackGeek is a Bay Area startup focused on the OpenStack private cloud project.  StackGeek consultants are experts at building scalable private and hybrid cloud solutions for companies looking to maximize their infrastructure spend.  StackGeek specializes in virtualization of purchased or leased equipment, networking and load balancer configuration, large scale storage solutions, and a variety of custom cloud infrastructure optimization.</p>
 		<p>If you are interested in cloud technologies, or have a hankering for helping others configure, setup and deploy their own cloud infrastructure, <a href="mailto:joinus@stackgeek.com?subject='I'm a geek too!'">drop us a line</a>.  We'd love to hear from you.</p>
 		<h3>Get in Touch</h3>
 		<p>You can use the following information to contact us. You can also fill out our <a data-toggle="modal" href="#contactmodal">online contact form</a> to be contacted by a representative.</p>
-		<div id="contactmodal" class="modal fade">
-	      <div class="modal-header">
-	        <button class="close" data-dismiss="modal">&times;</button>
-	        <h3>Email StackGeek</h3>
-	      </div>
-	      <div class="modal-body">
-			<div id="wufoo-z7x3x5"></div>
-			<script type="text/javascript">var z7x3x5;(function(d, t) {
-			var s = d.createElement(t), options = {
-			'userName':'stackgeek', 
-			'formHash':'z7x3x5', 
-			'autoResize':true,
-			'height':'577',
-			'async':true,
-			'header':'show'};
-			s.src = ('https:' == d.location.protocol ? 'https://' : 'http://') + 'wufoo.com/scripts/embed/form.js';
-			s.onload = s.onreadystatechange = function() {
-			var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return;
-			try { z7x3x5 = new WufooForm();z7x3x5.initialize(options);z7x3x5.display(); } catch (e) {}};
-			var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
-			})(document, 'script');</script>
-          </div>
-	    </div>
+		{% include themes/twitter/emailmodal.html %}
 		<div id="address">
 			<h4>StackGeek Inc.</h4>
 			<p>1092 Sanders Drive&nbsp;<br>
@@ -85,6 +61,7 @@
 		    </div>
 		  </li>
 	    </div>
+	    </article>
       </div>
 
       <footer>
