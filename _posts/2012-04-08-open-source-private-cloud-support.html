@@ -60,8 +60,6 @@ Each project allows you to create OS images, spin up instances, give them keypai
 <code>tl;dr;</code> Servers at a click!
 
 
-## So Then, What's Not Supported?
-
 <h2 id='so_then_whats_not_supported'>So Then, What's Not Supported?</h2>
 
 <p>Not all EC2 API features are supported by the separate projects, and some are not supported at all. In general, there are some small subtle difference between the support of the EC2 APIs. Let's take a look at who supports what, if at all:</p>
@@ -117,7 +115,7 @@ Each project allows you to create OS images, spin up instances, give them keypai
 
 <p>Here's what isn't supported: Paid AMIs (a tasty thought for revenue), spot instances, reserved instances, instance bundling (to AMI), monitoring, and tagging/filter support is, by and large, not supported by anyone. CloudStack has a few filter calls, but they are minimally supported. Someone should really add tagging support.</p>
 
-<p>CloudStack has the upper hand on the load balancing calls. It should be trivial to add load balancing calls to the other projects to support devices like a <a href='http://f5.com'>F5</a> or <a href='http://www.citrix.com/English/ps2/products/product.asp?contentID=21679'>Netscaler</a> box though. <a href='http://citrix.com'>Citrix</a>, the authors of CloudStack/cloud.com, also owns Netscaler. They do happen to have an image you can launch which contains a load balancer based on HAProxy. I'm not sure if the code for that is publicly available or not. Comments?</p>
+<p>CloudStack has the upper hand on the load balancing calls. It should be trivial to add load balancing calls to the other projects to support devices like a <a href='http://f5.com'>F5</a> or <a href='http://www.citrix.com/English/ps2/products/product.asp?contentID=21679'>Netscaler</a> box though. <a href='http://citrix.com'>Citrix</a>, the authors of <a href='http://cloud.com'>CloudStack</a>, also owns Netscaler. They do happen to have an image you can launch which contains a load balancer based on HAProxy. I'm not sure if the code for that is publicly available or not. Comments?</p>
 
 <p>CloudStack also support EC2 API equivalent calls for creating IPSec on VPCs. I've never done it, but I hear it's nice. Support for creating images is also provided.</p>
 
