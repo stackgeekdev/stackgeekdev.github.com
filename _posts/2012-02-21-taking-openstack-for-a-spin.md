@@ -14,9 +14,9 @@ OpenStack's components are mostly written in Python and include [Nova](https://g
 
 ![](/assets/images/awesomesauce.png)
 
-As of this writing, the most current version of OpenStack is "Essex":https://launchpad.net/nova/essex/essex-rc1.  Essex is currently in release candidate phase, with RC1 available for download for each of the components listed above.  The git repository for the components is "available on Github":https://github.com/openstack.
+As of this writing, the most current version of OpenStack is [Essex](https://launchpad.net/nova/essex/essex-rc1).  Essex is currently in release candidate phase, with RC1 available for download for each of the components listed above.  The git repository for the components is [available on Github](https://github.com/openstack).
 
-I floundered around for a few days trying to download and run the various independent components of OpenStack.  The instability of the early versions of Essex and the maze of configuration files you have to tweak make a difficult time of getting it running, at least for me.  Thankfully, a bit of Googling revealed a script written by the fine folks over at Rackspace called "DevStack":http://devstack.org/, which does all the heavy lifting for getting Openstack running.  
+I floundered around for a few days trying to download and run the various independent components of OpenStack.  The instability of the early versions of Essex and the maze of configuration files you have to tweak make a difficult time of getting it running, at least for me.  Thankfully, a bit of Googling revealed a script written by the fine folks over at Rackspace called [DevStack](http://devstack.org/), which does all the heavy lifting for getting Openstack running.  
 
 _Note: Rackspace doesn't recommend using DevStack for production deployments, but it works great if you just want to give OpenStack a test drive and do some quick development on the instances you start._
 
@@ -27,12 +27,12 @@ I've put together a 14 minute step-by-step video guide for getting OpenStack ins
 
 <iframe src="http://player.vimeo.com/video/39055026?byline=0&portrait=0" width="420" height="348" frameborder="0">&nbsp;</iframe>
 
-You can "download Oneiric":http://www.ubuntu.com/download/server/download from Ubuntu's website.  Get it running on a VM or a bare metal box and make sure you install the OpenSSH server so you can ssh into it.
+You can [download Oneiric](http://www.ubuntu.com/download/server/download) from Ubuntu's website.  Get it running on a VM or a bare metal box and make sure you install the OpenSSH server so you can ssh into it.
 
 
 ### Using VMWare Fusion
 
-I'm running OpenStack on a dedicated box, but if you run OpenStack on a VM you'll need to ensure you have enough CPU/memory to start instances.  You'll need at least 1.5GB to launch a tiny instance.  Keep in mind that instance will be a bit slow because it's running a "VM on top of another VM":http://en.wikipedia.org/wiki/Simulated_reality#Nested_simulations.  
+I'm running OpenStack on a dedicated box, but if you run OpenStack on a VM you'll need to ensure you have enough CPU/memory to start instances.  You'll need at least 1.5GB to launch a tiny instance.  Keep in mind that instance will be a bit slow because it's running a [VM on top of another VM](http://en.wikipedia.org/wiki/Simulated_reality#Nested_simulations).  
 
 Here's a screenshot of my VMWare Fusion config set up with a bridged network and about 4GB of RAM with 2 cores assigned:
 
@@ -189,7 +189,7 @@ Once you are logged in you can set up your own account and ssh keys to access th
 
 If you are running a cluster of servers, you'll need some type of reverse proxy to direct the traffic.  It doesn't appear that OpenStack provides this or load balancer features (yet), but there are a few projects that could have APIs added to them to enable future integration into the OpenStack deployment infrastructure.
 
-In the meantime, check out "Nodejitsu's":http://nodejitsu.com Node based HTTP proxy on "Github":https://github.com/nodejitsu/node-http-proxy.  It's fairly easy to configure and the performance is decent.  Here's a version I'm running for reference:
+In the meantime, check out [Nodejitsu's](http://nodejitsu.com) Node based HTTP proxy on [Github](https://github.com/nodejitsu/node-http-proxy).  It's fairly easy to configure and the performance is decent.  Here's a version I'm running for reference:
 
 <pre class='prettyprint linenums'>
 var util = require('util'),
