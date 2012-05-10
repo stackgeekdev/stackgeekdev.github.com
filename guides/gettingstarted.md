@@ -1,3 +1,11 @@
+---
+layout: page
+title: "Installing OpenStack on Ubuntu 12.04LTS"
+description: ""
+category: 
+tags: []
+by: Kord Campbell
+---
 Howdy, I’m Kord Campbell, founder of Stackgeek.  This video will walk you through getting started with OpenStack by creating a new project to be used for development.  We’ll launch a couple of instances and install apache in the process.
 
 This video guide assumes you’ve already installed OpenStack on at least a single node.  If you haven’t installed OpenStack yet, hop over to our tutorial pages and read the ‘installing openstack on ubuntu’ guide.  There’s also a video guide for the installation process.  Keep in mind this demo is done using a single node deployment of OpenStack, but it could also be done using a multi-node deployment.
