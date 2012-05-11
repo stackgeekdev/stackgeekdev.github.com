@@ -51,7 +51,7 @@
         $('body').addClass('modal-open')
 
         this.isShown = true
-
+        mixpanel.track("Modal Show");
         escape.call(this)
         backdrop.call(this, function () {
           var transition = $.support.transition && that.$element.hasClass('fade')
