@@ -43,8 +43,8 @@
           <h1>OpenStack Experts</h1>
           <p>We build private cloud solutions with <a href="http://openstack.org/">OpenStack</a>.  For you.</p>
           <p class="download-info">
-	        <a class="btn btn-primary btn-large" data-toggle="modal" href="#contactmodal">Contact Us Today</a>
-		    <a class="btn btn-large" data-toggle="modal" href="#demomodal">Watch a Demo</a>
+	        <a class="btn btn-primary btn-large" id="contactus" data-toggle="modal" href="#contactmodal">Contact Us Today</a>
+		    <a class="btn btn-large" id="weclomevideo" data-toggle="modal" href="#demomodal">Watch a Demo</a>
             {% include themes/twitter/emailmodal.html %}
             {% include themes/twitter/demomodal.html %}
           </p>
@@ -126,10 +126,9 @@
 	</div>
 
 
-    {% include JB/analytics %}
+    {% include themes/twitter/mixpanel.html %}
     {% include themes/twitter/jsincludes.html %}
-    {% include themes/twitter/twitter.html %}
- 
+
     <footer>
       <div class="section twitter">
         <h3>Just in from <a href="http://twitter.com/stackgeek" target="_blank">@stackgeek</a></h3>

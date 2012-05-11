@@ -1,5 +1,6 @@
 <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
 <script src="{{ ASSET_PATH }}/js/jquery.js"></script>
+<script src="{{ ASSET_PATH }}/js/vimeo.js"></script>
 <script src="{{ ASSET_PATH }}/js/google-code-prettify/prettify.js"></script>
 <script src="{{ ASSET_PATH }}/js/bootstrap-transition.js"></script>
 <script src="{{ ASSET_PATH }}/js/bootstrap-alert.js"></script>
@@ -13,3 +14,13 @@
 <script src="{{ ASSET_PATH }}/js/bootstrap-collapse.js"></script>
 <script src="{{ ASSET_PATH }}/js/bootstrap-carousel.js"></script>
 <script src="{{ ASSET_PATH }}/js/bootstrap-typeahead.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  console.log("attaching to video button");
+  $("#welcomevideo").click(function() {
+	console.log("you are watching the video")
+	mixpanel.track("Home Video Play");
+  });
+});
+</script>

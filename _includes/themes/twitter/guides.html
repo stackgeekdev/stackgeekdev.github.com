@@ -47,8 +47,12 @@
 		  <h3>Videos</h3>
 		  <ul class="thumbnails example-sites">
 		    <li class="span4">
+		      <a class="thumbnail" target="_blank"><iframe src="http://player.vimeo.com/video/42010112?byline=0&portrait=0&color=ff9933" width="290" height="240" frameborder="0">&nbsp;</iframe></a>
+		      <p>Installing OpenStack on Ubuntu</p>
+		    <li class="span4">
 		      <a class="thumbnail" target="_blank"><iframe src="http://player.vimeo.com/video/41807514?byline=0&portrait=0&color=ff9933" width="290" height="240" frameborder="0">&nbsp;</iframe></a>
 		      <p>OpenStack Introduction</p>
+		    </li>
 		    <li class="span4">
 		      <a class="thumbnail" target="_blank"><iframe src="http://player.vimeo.com/video/39055026?byline=0&portrait=0&color=ff9933" width="290" height="240" frameborder="0">&nbsp;</iframe></a>
 		      <p>Installing DevStack on Ubuntu</p>
@@ -74,23 +78,8 @@
 
     </div> <!-- /container -->
 
-    {% include JB/analytics %}
-
-    <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
-    <script src="{{ ASSET_PATH }}/js/jquery.js"></script>
-    <script src="{{ ASSET_PATH }}/js/google-code-prettify/prettify.js"></script>
-    <script src="{{ ASSET_PATH }}/js/bootstrap-transition.js"></script>
-    <script src="{{ ASSET_PATH }}/js/bootstrap-alert.js"></script>
-    <script src="{{ ASSET_PATH }}/js/bootstrap-modal.js"></script>
-    <script src="{{ ASSET_PATH }}/js/bootstrap-dropdown.js"></script>
-    <script src="{{ ASSET_PATH }}/js/bootstrap-scrollspy.js"></script>
-    <script src="{{ ASSET_PATH }}/js/bootstrap-tab.js"></script>
-    <script src="{{ ASSET_PATH }}/js/bootstrap-tooltip.js"></script>
-    <script src="{{ ASSET_PATH }}/js/bootstrap-popover.js"></script>
-    <script src="{{ ASSET_PATH }}/js/bootstrap-button.js"></script>
-    <script src="{{ ASSET_PATH }}/js/bootstrap-collapse.js"></script>
-    <script src="{{ ASSET_PATH }}/js/bootstrap-carousel.js"></script>
-    <script src="{{ ASSET_PATH }}/js/bootstrap-typeahead.js"></script>
+    {% include themes/twitter/mixpanel.html %}
+    {% include themes/twitter/jsincludes.html %}
 
     </div> <!-- /container -->
 
