@@ -7,13 +7,17 @@ tags: []
 by: Kord Campbell
 ---
 <p><small>Last updated on 05/11/12 @ 12:00AM</small></p>
-Using all of the guides and scripts above as reference we've assembled a [few scripts](https://github.com/StackGeek/openstackgeek) and this short guide which should give you a working installation of OpenStack Essex in about 10 minutes.  Before you start, you'll need the following in place:
+StackGeek has assembled a [few scripts](https://github.com/StackGeek/openstackgeek) and this guide which will give you a working installation of OpenStack Essex in about 10 minutes. Before you start, you'll need the following in place:
 
 1. A box with at least 8GB of RAM, 4 processing cores, (2) hard drives, and (2) ethernet cards.
 2. A clean [install of Ubuntu 12.04 LTS](http://www.ubuntu.com/download/server) 64-bit server on your box.
 3. One Monster energy drink.
 
 <p><code>Note:</code> Only the primary ethernet card needs to be connected to the network.  If you only have one ethernet card, you can hack the scripts to use the primary interface for your private network.</p>
+
+### Video Guide
+The video guide for this tutorial [is on Vimeo](http://vimeo.com/42010112).
+<span id="video-41807514"></span>
 
 ### Download the Scripts
 Login to your box and install <code>git</code> with <code>apt-get</code>.  We'll become root and do an update first.
