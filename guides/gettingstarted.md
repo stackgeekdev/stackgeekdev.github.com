@@ -1,6 +1,6 @@
 ---
-layout: guides
-title: "Installing OpenStack on Ubuntu 12.04LTS in 10 Minutes"
+layout: guide
+title: "Installing OpenStack on Ubuntu 12.04 LTS in 10 Minutes"
 description: ""
 category: 
 tags: []
