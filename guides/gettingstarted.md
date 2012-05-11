@@ -68,7 +68,7 @@ Change the settings for your network configuration and then restart networking a
 ./openstack_base_2.sh
 </pre>
 
-After the second script finishes, you'll need to set up a logical volume for Glance to use for storing images.  Glance is the OpenStack image manager. These images are used to boot instances with Nova, OpenStack's compute controller process.  
+After the second script finishes, you'll need to set up a logical volume for Nova to use for creating snapshots and volumes.  Nova is OpenStack's compute controller process.
 
 Here's the output from the format and volume creation process:
 
