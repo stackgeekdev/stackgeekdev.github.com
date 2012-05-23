@@ -129,6 +129,15 @@
     {% include themes/twitter/mixpanel.html %}
     {% include themes/twitter/jsincludes.html %}
     {% include themes/twitter/twitter.html %}
+	<script type="text/javascript">
+	window.onload=function(){
+	  var key = "ce84cdce-d885-4742-81d2-4eba54dac045";
+	  var host = "http://logs.loggly.com";
+	  castor = new loggly({ url: host+'/inputs/'+key+'?rt=1', level: 'log'});
+	  castor.log("url="+window.location.href + " browser=" + castor.user_agent + " height=" + castor.browser_size.height);
+	}
+	</script>
+	<script type="text/javascript" src="http://d3eyf2cx8mbems.cloudfront.net/js/loggly-0.1.0.js"></script>
 
     <footer>
       <div class="section twitter">
